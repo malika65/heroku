@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns:th = "http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add customer to list</title>
+    <link rel="stylesheet" type="text/css" th:href="@{style.css}"/>
+</head>
+<body>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+</form>
+<h1>Add new customer to list</h1>
+<form th:action="@{/addCustomer}"
+      th:object="${customerForm}" method="POST">
+    <label for="firstName">firstName:</label>
+    <input type="text" name="firstName" id="firstName" size="50"></input>
+    <br/><br/>
+    <label for="lastName">lastName:</label>
+    <input type="text" name="lastName" id="lastName" size="50"></input>
+    <br/><br/>
+    <label for="emailAddress">Email Address:</label>
+    <input type="text" name="emailAddress" id="emailAddress" size="50"></input>
+    <br/><br/>
+    <label for="jobTitle">Job Title:</label>
+    <input type="text" name="jobTitle" id="jobTitle" size="50"></input>
+    <br/><br/>
+    <label for="mobilePhone">Mobile Phone:</label>
+    <input type="text" name="mobilePhone" id="mobilePhone" size="50"></input>
+    <br/><br/>
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city" size="50"></input>
+    <br/><br/>
+    <label for="webPage">Web Page:</label>
+    <input type="text" name="webPage" id="webPage" size="50"></input>
+    <br/>
+    <input type="submit" value="Create"/>
+</form>
+<br/>
+<div th:if="${errorMessage}" th:utext="${errorMessage}"
+     style="color: red; font-style:italic;">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: ${JDBC_DATABASE_URL:jdbc:mysql://localhost:3306/customers?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode\
+      =false&serverTimezone=UTC}
+    username: ${JDBC_DATABASE_USERNAME:root}
+    password: ${JDBC_DATABASE_PASSWORD:Murat19651977aizada}

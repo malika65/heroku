@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Customer List</title>
+    <link rel="stylesheet" type="text/css" th:href="@{style.css}"/>
+</head>
+<body>
+<hr>
+<h2> Your Customers</h2>
+<a href="addCustomer">Add customer</a>
+<div>
+    <table border="1">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email Address</th>
+            <th>Job Title</th>
+            <th>Mobile Phone</th>
+            <th>City</th>
+            <th>Web Page</th>
+        </tr>
+        <tr th:each="customer: ${customerList}">
+            <td th:utext="${customer.firstName}"></td>
+            <td th:utext="${customer.lastName}"></td>
+            <td th:utext="${customer.emailAddress}"></td>
+            <td th:utext="${customer.jobTitle}"></td>
+            <td th:utext="${customer.mobilePhone}"></td>
+            <td th:utext="${customer.city}"></td>
+            <td th:utext="${customer.webPage}"></td>
+        </tr>
+
+    </table>
+</div>
+</hr>
+<form th:action="@{/logout}" method="post">
+    <input type="submit" value="Sign Out"/>
+    </form>
+
+</body>
+</html>
